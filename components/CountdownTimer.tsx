@@ -1,11 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 
-const CountdownTimer = ({ startTime }) => {
+type Props = {
+    startTime: number
+}
+
+const CountdownTimer: FunctionComponent<Props> = ({ startTime }) => {
 
     const calculateTimeLeft = () => {
         const difference = +new Date(startTime) - +new Date();
 
-        let timeLeft = {};
+        let timeLeft: {
+            hours: number,
+            minutes: number,
+            seconds: number,
+        } = {
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+        };
 
         if (difference > 0) {
             timeLeft = {
