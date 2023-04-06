@@ -23,11 +23,11 @@ const Flashcard: FunctionComponent<Props> = ({ question, answer, flip, edit }) =
 
   return (
     <div 
-        className="h-[500px] w-[900px] shadow-md bg-white flex flex-col justify-start items-center px-16 py-8 gap-6 rounded-md"
+        className="h-[500px] w-[900px] shadow-md bg-white flex flex-col justify-start items-center px-16 py-8 gap-6 rounded-md hover:cursor-pointer text-center"
         onClick={() => setFlipped(!flipped)}
     >
         <div className="grid grid-cols-3 justify-center items-center w-full">
-            <h1 className="font-medium text-4xl col-start-2">       
+            <h1 className="font-medium text-4xl col-start-2 text-center">       
                 {!flipped ? "Question" : "Answer"}
             </h1>
             <button 

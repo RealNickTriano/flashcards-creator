@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 import LoginBtn from '@/components/LoginBtn'
 import { useSession } from 'next-auth/react'
 import Flashcard from '@/components/Flashcard'
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/StudyBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
