@@ -1,8 +1,14 @@
+import dynamic from "next/dynamic";
 import { BiShuffle } from "react-icons/bi";
 import { MdEditNote } from "react-icons/md";
 import { TbCards } from "react-icons/tb";
+import { VscDebugRestart } from "react-icons/vsc";
 
-const NavBar = () => {
+const CountdownTimer = dynamic(() => import("./CountdownTimer"), {
+    ssr: false
+})
+
+const StudyBar = () => {
 
     function shuffleCards() {
         // TODO
@@ -27,14 +33,19 @@ const NavBar = () => {
                 onClick={() => shuffleCards()}
             >Shuffle<BiShuffle/></button>
         </li>
+        <li className="text-4xl font-bold bg-blue-200 shadow-md px-2 rounded-sm">
+            <CountdownTimer
+                startTime={new Date().getTime() + (1 * 60 * 1001)}
+            />
+        </li>
         <li>
             <button 
                 className="flex justify-center items-center gap-2"
                 onClick={() => viewDecks()}
-            >Decks<TbCards/></button>
+            >Restart<VscDebugRestart/></button>
         </li>
     </ul>
   )
 }
 
-export default NavBar
+export default StudyBar
