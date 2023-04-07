@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col justify-center gap-12 items-center h-screen'>
-      Show deck list, create deck, etc.
+      Home page
     </div>
     
   )
